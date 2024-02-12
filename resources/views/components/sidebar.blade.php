@@ -7,16 +7,17 @@
             <a href="index.html">RR</a>
         </div>
         <ul class="sidebar-menu">
+            {{-- Dashboard --}}
             <li class="menu-header">Dashboard</li>
-            <li>
-                <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                <ul class="dropdown-menu">
-                    <li class='{{ Request::is('dashboard-general-dashboard') ? 'active' : '' }}'>
-                        <a class="nav-link"
-                            href="{{ url('dashboard-general-dashboard') }}">General Dashboard</a>
-                    </li>
-                </ul>
+            <li class='{{ Request::is('dashboard') ? 'active' : '' }}'>
+                <a class="nav-link"
+                    href="{{ url('dashboard') }}"><i class="fas fa-fire"></i> <span>General Dashboard </span></a>
+            </li>
+            {{-- Menu --}}
+            <li class="menu-header">Menu</li>
+            <li class="{{ Request::is('users') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('users.index') }}"><i class="far fa-user"></i> <span>Users</span></a>
             </li>
         </ul>
     </aside>
