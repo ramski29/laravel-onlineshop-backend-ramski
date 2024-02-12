@@ -19,6 +19,14 @@
                 <a class="nav-link"
                     href="{{ route('users.index') }}"><i class="far fa-user"></i> <span>Users</span></a>
             </li>
+            <li class="{{ Request::is('products') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('products.index') }}"><i class="far fa-hdd"></i> <span>Products</span></a>
+            </li>
+            <li class="{{ Request::is('categories') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('categories.index') }}"><i class="far fa-square"></i> <span>Categories</span></a>
+            </li>
         </ul>
     </aside>
 </div>

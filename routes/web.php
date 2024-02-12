@@ -21,10 +21,18 @@ Route::get('/users', function () {
     return view('pages.users.index');
 });
 
+Route::get('/products', function () {
+    return view('pages.products.index');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('home', function () {
         return view('pages.dashboard');
     })->name('home');
     // route from user controller
     Route::resource('users', 'App\Http\Controllers\UserController');
+    // route from product controller
+    Route::resource('products', 'App\Http\Controllers\ProductController');
+    // route from category controller
+    Route::resource('categories', 'App\Http\Controllers\CategoryController');
 });
